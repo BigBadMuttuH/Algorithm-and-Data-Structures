@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Ex02_SortingAlgorithms\Ex02_SortingAlgorithms.csproj" />
     <ProjectReference Include="..\Ex03_LinkedList\Ex03_LinkedList.csproj" />
     <ProjectReference Include="..\Ex04_Stack\Ex04_Stack.csproj" />
+    <ProjectReference Include="..\Ex05_Queue\Ex05_Queue.csproj" />
   </ItemGroup>
 
 </Project>
