@@ -12,9 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex02_SortingAlgorithms", "Ex02_SortingAlgorithms\Ex02_SortingAlgorithms.csproj", "{DE45EEBA-73CA-4C02-9A5B-B552C972C8F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex02_SortingAlgorithms", "Ex02_SortingAlgorithms\Ex02_SortingAlgorithms.csproj", "{DE45EEBA-73CA-4C02-9A5B-B552C972C8F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Tests", "Lib.Tests\Lib.Tests.csproj", "{4C54CFF6-E173-4B9F-9599-AA6E5EA33068}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.Tests", "Lib.Tests\Lib.Tests.csproj", "{4C54CFF6-E173-4B9F-9599-AA6E5EA33068}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex03_LinkedList", "Ex03_LinkedList\Ex03_LinkedList.csproj", "{0DE95FCC-A445-4385-AF67-5A8FF96499A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex04_Stack", "Ex04_Stack\Ex04_Stack.csproj", "{9D07DC02-02FC-4365-88AD-25EF8090ADEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +42,14 @@ Global
 		{4C54CFF6-E173-4B9F-9599-AA6E5EA33068}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C54CFF6-E173-4B9F-9599-AA6E5EA33068}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C54CFF6-E173-4B9F-9599-AA6E5EA33068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE95FCC-A445-4385-AF67-5A8FF96499A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE95FCC-A445-4385-AF67-5A8FF96499A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE95FCC-A445-4385-AF67-5A8FF96499A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE95FCC-A445-4385-AF67-5A8FF96499A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D07DC02-02FC-4365-88AD-25EF8090ADEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D07DC02-02FC-4365-88AD-25EF8090ADEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D07DC02-02FC-4365-88AD-25EF8090ADEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D07DC02-02FC-4365-88AD-25EF8090ADEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

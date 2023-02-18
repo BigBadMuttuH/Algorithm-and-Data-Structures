@@ -16,6 +16,8 @@
     <ProjectReference Include="..\Algorithm-and-Data-Structures\Algorithm-and-Data-Structures.csproj" />
     <ProjectReference Include="..\Ex01_Arrays\Ex01_Arrays.csproj" />
     <ProjectReference Include="..\Ex02_SortingAlgorithms\Ex02_SortingAlgorithms.csproj" />
+    <ProjectReference Include="..\Ex03_LinkedList\Ex03_LinkedList.csproj" />
+    <ProjectReference Include="..\Ex04_Stack\Ex04_Stack.csproj" />
   </ItemGroup>
 
 </Project>
