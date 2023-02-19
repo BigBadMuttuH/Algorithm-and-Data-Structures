@@ -11,6 +11,7 @@ namespace Algorithm_and_Data_Structures
     public class Customer
     {
         public string Name { get; set; }
+        public int Age { get; set; }
         public DateTime BirthDate { get; set; }
 
         public string ToString(string format)
