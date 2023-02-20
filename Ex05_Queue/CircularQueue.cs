@@ -1,109 +1,89 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
-namespace Algorithm_and_Data_Structures
+namespace Algorithm_and_Data_Structures;
+
+public class CircularQueue<T> : IEnumerable<T>
 {
-    public class CircularQueue<T> : IEnumerable<T>
+    private int _head;
+    private T[] _queue;
+    private int _tail;
+
+    public CircularQueue()
     {
-        private int _head;
-        private int _tail;
-        private T[] _queue;
+        const int defultCapacity = 4;
+        _queue = new T[defultCapacity];
+    }
 
-        public int Count => _head <= _tail
-            ? _tail - _head
-            : _tail - _head + _queue.Length;
-        public bool IsEmpty => Count == 0;
+    public CircularQueue(int capacity)
+    {
+        _queue = new T[capacity];
+    }
 
-        public int Capacity => _queue.Length;
+    public int Count => _head <= _tail
+        ? _tail - _head
+        : _tail - _head + _queue.Length;
 
-        public CircularQueue()
+    public bool IsEmpty => Count == 0;
+
+    public int Capacity => _queue.Length;
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        if (_head <= _tail)
         {
-            const int defultCapacity = 4;
-            _queue = new T[defultCapacity];
+            for (var i = _head; i < _tail; i++) yield return _queue[i];
         }
-        public CircularQueue(int capacity)
+        else
         {
-            _queue = new T[capacity];
+            for (var i = _head; i < _queue.Length; i++) yield return _queue[i];
+            for (var i = 0; i < _tail; i++) yield return _queue[i];
         }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 
 
-        public void Enqueu(T item)
+    public void Enqueu(T item)
+    {
+        if (Count == _queue.Length - 1)
         {
-            if (Count == _queue.Length - 1)
-            {
-                int countPriorResize = Count;
-                T[] newArray = new T[2 * _queue.Length];
+            var countPriorResize = Count;
+            var newArray = new T[2 * _queue.Length];
 
-                Array.Copy(_queue, _head, newArray, 0, _queue.Length - _head);
-                Array.Copy(_queue, 0, newArray, _queue.Length - _head, _tail);
+            Array.Copy(_queue, _head, newArray, 0, _queue.Length - _head);
+            Array.Copy(_queue, 0, newArray, _queue.Length - _head, _tail);
 
-                _queue = newArray;
+            _queue = newArray;
 
-                _head = 0;
-                _tail = countPriorResize;
-            }
-
-            _queue[_tail] = item;
-            if (_tail < _queue.Length - 1)
-            {
-                _tail++;
-            }
-            else
-            {
-                _tail = 0;
-            }
-        }
-
-        public void Dequeue()
-        {
-            if (IsEmpty)
-                throw new InvalidOperationException();
-
-            _queue[_head++] = default(T);
-            if(IsEmpty)
-                _head = _tail = 0;
-            else if (_head == _queue.Length)
-            {
-                _head = 0;
-            }
+            _head = 0;
+            _tail = countPriorResize;
         }
 
-        public T Peek()
-        {
-            if (IsEmpty)
-                throw new InvalidOperationException();
-            return _queue[_head];
-        }
+        _queue[_tail] = item;
+        if (_tail < _queue.Length - 1)
+            _tail++;
+        else
+            _tail = 0;
+    }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            if (_head <= _tail)
-            {
-                for (int i = _head; i < _tail; i++)
-                {
-                    yield return _queue[i];
-                }
-            }
-            else
-            {
-                for (int i = _head; i < _queue.Length; i++)
-                {
-                    yield return _queue[i];
-                }
-                for (int i = 0; i < _tail; i++)
-                {
-                    yield return _queue[i];
-                }
-            }
-        }
+    public void Dequeue()
+    {
+        if (IsEmpty)
+            throw new InvalidOperationException();
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        _queue[_head++] = default;
+        if (IsEmpty)
+            _head = _tail = 0;
+        else if (_head == _queue.Length) _head = 0;
+    }
+
+    public T Peek()
+    {
+        if (IsEmpty)
+            throw new InvalidOperationException();
+        return _queue[_head];
     }
 }

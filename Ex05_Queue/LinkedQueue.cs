@@ -1,45 +1,39 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Collections;
 
-namespace Algorithm_and_Data_Structures
+namespace Algorithm_and_Data_Structures;
+
+public class LinkedQueue<T> : IEnumerable<T>
 {
-    public class LinkedQueue<T> : IEnumerable<T>
+    private readonly SinglyLinkedList<T> _list = new();
+    public int Capacity;
+    public int Count => _list.Count;
+    public bool IsEmpty => Count == 0;
+
+
+    public IEnumerator<T> GetEnumerator()
     {
-        private readonly SinglyLinkedList<T> _list = new SinglyLinkedList<T>();
-        public int Count => _list.Count;
-        public bool IsEmpty => Count == 0;
-        public int Capacity;
+        return _list.GetEnumerator();
+    }
 
-        public void Enqueu(T item)
-        {
-            _list.AddLast(item);
-        }
-        public void Decque()
-        {
-            _list.RemoveFirst();
-        }
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 
-        public T Peek()
-        {
-            if (IsEmpty)
-                throw new InvalidOperationException();
-            return _list.Head.Value;
-        }
+    public void Enqueu(T item)
+    {
+        _list.AddLast(item);
+    }
 
+    public void Decque()
+    {
+        _list.RemoveFirst();
+    }
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            return _list.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+    public T Peek()
+    {
+        if (IsEmpty)
+            throw new InvalidOperationException();
+        return _list.Head.Value;
     }
 }

@@ -1,10 +1,9 @@
-﻿namespace Algorithm_and_Data_Structures
+﻿namespace Algorithm_and_Data_Structures;
+
+internal class Program
 {
-    class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-             ListDemo.Run();
-        }
+        ListDemo.Run();
     }
 }

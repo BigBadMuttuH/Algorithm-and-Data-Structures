@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Algorithm_and_Data_Structures;
 
-namespace Algorithm_and_Data_Structures
+public class DoublyLinkedNode<T>
 {
-    public class DoublyLinkedNode<T>
+    public DoublyLinkedNode(T value)
     {
-        public DoublyLinkedNode<T> Next { get; internal set; }
-        public DoublyLinkedNode<T> Previous { get; internal set; }
-
-        public T Value { get; set; }
-
-        public DoublyLinkedNode(T value) => Value = value;
+        Value = value;
     }
+
+    public DoublyLinkedNode<T> Next { get; internal set; }
+    public DoublyLinkedNode<T> Previous { get; internal set; }
+
+    public T Value { get; set; }
 }
