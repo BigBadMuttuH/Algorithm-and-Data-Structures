@@ -19,6 +19,10 @@
     <ProjectReference Include="..\Ex03_LinkedList\Ex03_LinkedList.csproj" />
     <ProjectReference Include="..\Ex04_Stack\Ex04_Stack.csproj" />
     <ProjectReference Include="..\Ex05_Queue\Ex05_Queue.csproj" />
+    <ProjectReference Include="..\Ex06_SearchingAlgorithms\Ex06_SearchingAlgorithms.csproj" />
+    <ProjectReference Include="..\Ex08_HashTables\Ex08_HashTables.csproj" />
+    <ProjectReference Include="..\Ex09_Trees\Ex09_BSTree.csproj" />
+    <ProjectReference Include="..\Ex10_Heap\Ex10_Heap.csproj" />
   </ItemGroup>
 
 </Project>

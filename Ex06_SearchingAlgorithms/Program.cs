@@ -1,6 +1,6 @@
 ﻿namespace Algorithm_and_Data_Structures;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -76,7 +76,7 @@ internal class Program
     }
 }
 
-internal class CustomerComparer : IEqualityComparer<Customer>
+public class CustomerComparer : IEqualityComparer<Customer>
 {
     public bool Equals(Customer x, Customer y)
     {
@@ -86,5 +86,46 @@ internal class CustomerComparer : IEqualityComparer<Customer>
     public int GetHashCode(Customer obj)
     {
         return obj.GetHashCode();
+    }
+}
+
+public class Searching
+{
+    public static int RecursiveBinarySearch(int[] array, int value)
+    {
+        return InternalRecursiveBinarySearch(0, array.Length);
+
+        int InternalRecursiveBinarySearch(int low, int high)
+        {
+            if (low >= high)
+                return -1;
+
+            var mid = (low + high) / 2;
+            if (array[mid] == value) return mid;
+
+            if (array[mid] < value)
+                return InternalRecursiveBinarySearch(mid + 1, high);
+            return InternalRecursiveBinarySearch(low, mid);
+        }
+    }
+
+    public static int BinarySearch(int[] array, int value)
+    {
+        var low = 0;
+        var high = array.Length;
+
+        while (low < high)
+        {
+            var mid = (low + high) / 2;
+
+            if (array[mid] == value)
+                return mid;
+            if (array[mid] < value)
+                low = mid + 1;
+            else
+                high = mid;
+        }
+
+        return -1;
     }
 }
